@@ -21,7 +21,7 @@ jobs:
           
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Compile Linux x64
       if: matrix.platform == 'linux'
@@ -31,7 +31,7 @@ jobs:
 
     - name: Upload Linux x64 artifact
       if: matrix.platform == 'linux'
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: AVDump3NativeLib.Linux
         path: ${{ github.workspace }}/AVDump3NativeLib/AVDump3NativeLib-linux-x64.so
@@ -47,7 +47,7 @@ jobs:
 
     - name: Upload Linux Arm64 artifact
       if: matrix.platform == 'linux'
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: AVDump3NativeLib.Linux
         path: ${{ github.workspace }}/AVDump3NativeLib/AVDump3NativeLib-linux-arm64.so
@@ -63,7 +63,7 @@ jobs:
 
     - name: Upload macOS artifact
       if: matrix.platform == 'macos'
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: AVDump3NativeLib.MacOS
         path: ${{ github.workspace }}/AVDump3NativeLib/AVDump3NativeLib-osx.dylib
@@ -80,7 +80,7 @@ jobs:
 
     - name: Upload Windows artifact
       if: matrix.platform == 'windows'
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: AVDump3NativeLib.Windows
         path: ${{ github.workspace }}\AVDump3NativeLib\x64\GithubWorkflow\AVDump3NativeLib-windows-x64.dll
